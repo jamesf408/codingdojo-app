@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  
+  
+  
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="ios/CordovaLibcordova.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+   
+</head>
+<body>
+    <!-- MAIN PAGE -->
+    <div data-role="page" id="page1">
+        <div data-role="content">
+            
+            <a id="cs101" data-role="button" data-transition="slide" href="#cs101"
+            data-icon="arrow-r" data-iconpos="right">CS 101 - HTML, HTML5, CSS and CSS3</a>
+
+            <a id="cd" data-role="button" data-transition="slide" href="#cs110" data-icon="arrow-r"
+            data-iconpos="right">CS 110 - jQuery and jQueryUI</a>
+            
+            <a id="cs140" data-role="button" data-transition="slide" href="#cs140"
+            data-icon="arrow-r" data-iconpos="right">CS 140 - Mobile Web Application Development</a>
+
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center=465 Fairchild Dr, Mountain View, CA&amp;zoom=14&amp;size=288x200&amp;markers=CodingDojo&amp;sensor=false"
+        width="288" height="200">
+        </div>
+    </div>
+    <!-- END MAIN PAGE -->
+    
+    <!-- CS 101 - HTML, HTML5, CSS and CSS3 -->
+    <div data-role="page" id="cs101">
+        <div data-role="content">
+            <h2>
+                CS 101 - HTML, HTML5, CSS and CSS3
+            </h2>
+            <p>
+                HTML and CSS are fundamental building blocks for creating interactive
+                and stylish websites. Once you learn this, you can learn any other backend
+                programming languages (PHP, Ruby, Python, etc) to create a database driven
+                website. This course should take approximately 20-40 hours to master and
+                assumes that you do not have any prior programming experience. At the end
+                of the course, you will know how to create a website from scratch!
+            </p>
+            <a data-role="button" data-direction="reverse" data-transition="slide" href="#page1" data-icon="arrow-r"
+            data-iconpos="right">
+                HTML &amp; HTML5
+            </a>
+            <a data-role="button" data-direction="reverse" data-transition="slide" href="#page1" data-icon="arrow-r"
+            data-iconpos="right">
+                CSS &amp; CSS3
+            </a>
+            <a data-role="button" data-direction="reverse" data-transition="slide" href="#page1" data-icon="arrow-r"
+            data-iconpos="right">
+                Extra Goodies
+            </a>
+        </div>
+    </div>
+    <!-- END CS 101 -->
+
+    <!-- CS 110 - jQuery and jQueryUI -->
+    <div data-role="page" id="cs110">
+        <div data-role="content">
+            <h2>
+                CS 110 - jQuery and jQueryUI
+            </h2>
+            <p>
+                Pre-requisites: CS 101
+            </p>
+            <p>
+                jQuery and jQueryUI are javascript libraries to make your website very interactive. It's also cross-browser friendly, which means you can make very cool interactive things without having to worry about other browsers (mainly Internet Explorer) crashing or not working properly. After learning jQuery, jQueryUI, you will know how to do drag and drop, have html elements fade in/out, have fancy pop up dialogs open, and many other cool things. 
+            </p>
+            <p>
+                You should have a solid understanding of HTML and CSS before jumping into this course. Estimated time of completion: 20-40 hours.
+            </p>
+            <a data-role="button" data-direction="reverse" data-transition="slide" href="#page1" data-icon="arrow-r"
+            data-iconpos="right">
+                JQuery and JQueryUI
+            </a>
+        </div>
+    </div>
+    <!-- END CS 101 -->
+
+    <!-- CS 140 - MOBILE WEB APP CONTENT -->
+    <div data-role="page" id="cs140">
+        
+        <div data-role="content">
+            <h2>
+                CS 140 - Mobile Web Application Development
+            </h2>
+            <p>
+                Learn how to get up and running with Mobile Web Development using jQuery
+                Mobile and PhoneGap. It is fast, easy and can look and feel just like a
+                native mobile app!
+            </p>
+            <a data-role="button" data-direction="reverse" data-transition="slide"
+            href="#page1" data-icon="arrow-r" data-iconpos="right">
+                jQuery Mobile and PhoneGap
+            </a>
+        </div>
+    </div>
+    <!-- END CS 140 -->
+
+    <!-- CAMERA BUTTON -->
+    <div data-role="page" id="camera">
+        <div data-role="content">
+            <button data-role="button" data-transition="slide" data-icon="arrow-r"
+            data-iconpos="right" onclick="capturePhoto();">Capture Photo</button> <br>
+            <button data-role="button" data-transition="slide" data-icon="arrow-r"
+            data-iconpos="right" onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+            <button data-role="button" data-transition="slide" data-icon="arrow-r"
+            data-iconpos="right" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+            <button data-role="button" data-transition="slide" data-icon="arrow-r"
+            data-iconpos="right" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+            <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+            <img style="display:none;" id="largeImage" src="" />
+        </div>
+    </div>
+    <!-- END CAMERA -->
+
+    <!-- FIXED HEADER -->
+    <div id="my_header" data-role="header">
+        <div data-theme="c" data-role="header">
+            <div style=" text-align:center">
+                <img style="width: 225px;" src="http://codingdojo.com/static/img/coding_dojo_black.png">
+                <h2>
+                Learn by doing
+            </h2>
+            <a class="home_bttn" data-role="button" data-direction="reverse" data-transition="slide"
+        href="#page1">
+                Home
+            </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
